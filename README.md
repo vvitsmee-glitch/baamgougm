@@ -1,133 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bama Go To UGM</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAMA GO TO UGM</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
-
 body {
     margin: 0;
     height: 100vh;
     overflow: hidden;
-    font-family: "Creepster", cursive;
-    background: linear-gradient(to top, #020111, #191970);
+    font-family: Arial, sans-serif;
 }
 
-/* LANGIT */
-.sky {
+/* BACKGROUND LANGIT */
+.bg {
     position: absolute;
     width: 100%;
     height: 100%;
-}
-
-/* AWAN */
-.cloud {
-    position: absolute;
-    background: #fff;
-    border-radius: 50%;
-    opacity: 0.8;
-}
-
-.cloud::before,
-.cloud::after {
-    content: "";
-    position: absolute;
-    background: #fff;
-    border-radius: 50%;
-}
-
-.cloud1 {
-    width: 120px;
-    height: 60px;
-    top: 20%;
-    left: -150px;
-    animation: moveCloud 30s linear infinite;
-}
-
-.cloud1::before {
-    width: 60px;
-    height: 60px;
-    top: -20px;
-    left: 10px;
-}
-
-.cloud1::after {
-    width: 80px;
-    height: 80px;
-    top: -30px;
-    left: 40px;
-}
-
-.cloud2 {
-    width: 150px;
-    height: 70px;
-    top: 40%;
-    left: -200px;
-    animation: moveCloud 45s linear infinite;
-}
-
-@keyframes moveCloud {
-    from { transform: translateX(0); }
-    to { transform: translateX(120vw); }
-}
-
-/* BINTANG */
-.star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    animation: twinkle 2s infinite alternate;
-}
-
-@keyframes twinkle {
-    from { opacity: 0.2; }
-    to { opacity: 1; }
+    background: url('https://i.imgur.com/6Iej2c3.jpg') no-repeat center;
+    background-size: cover;
 }
 
 /* TEKS */
 h1 {
     position: absolute;
-    color: transparent;
-    font-size: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 50px;
+    font-weight: bold;
     text-align: center;
-    background: linear-gradient(90deg, red, orange, yellow, cyan, blue, purple);
-    -webkit-background-clip: text;
-    animation: glow 2s ease-in-out infinite alternate;
+
+    color: white;
+    text-shadow: 0 0 20px rgba(0,0,0,0.5),
+                 0 0 40px rgba(0,0,0,0.3);
+
+    animation: float 3s ease-in-out infinite;
 }
 
-@keyframes glow {
-    from {
-        text-shadow: 0 0 10px red, 0 0 20px orange;
-    }
-    to {
-        text-shadow: 0 0 20px cyan, 0 0 40px blue;
-    }
+/* ANIMASI GERAK HALUS */
+@keyframes float {
+    0%   { transform: translate(-50%, -50%) translateY(0px); }
+    50%  { transform: translate(-50%, -50%) translateY(-10px); }
+    100% { transform: translate(-50%, -50%) translateY(0px); }
 }
 </style>
 </head>
 
 <body>
 
-<div class="sky">
-    <!-- AWAN -->
-    <div class="cloud cloud1"></div>
-    <div class="cloud cloud2"></div>     
-    <!-- BINTANG RANDOM -->
-    <script>
-        for(let i=0;i<100;i++){
-            let star = document.createElement("div");
-            star.className = "star";
-            star.style.top = Math.random()*100 + "vh";
-            star.style.left = Math.random()*100 + "vw";
-            star.style.animationDuration = (Math.random()*2+1)+"s";
-            document.body.appendChild(star);
-        }
-    </script>
-</div>
+<div class="bg"></div>
 
 <h1>BAMA GO TO UGM</h1>
 
